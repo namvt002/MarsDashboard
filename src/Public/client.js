@@ -12,14 +12,17 @@ let store = Immutable.Map({
 
 const root = document.getElementById("root");
 
+//render display html app
 const renderApp = async (root, state) => {
   root.innerHTML = App(state);
 };
 
+//load app
 window.addEventListener("load", () => {
   renderApp(root, store);
 });
 
+//update store
 const updateStore = (store, newState) => {
   store = Object.assign(store, newState);
   renderApp(root, store);
